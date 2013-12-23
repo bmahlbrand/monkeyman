@@ -18,6 +18,7 @@ var defaultSpawnNumber = 5;
 var waveNumber = 1; 
 
 var isSpawning = false;
+var other : enemyfollow;
 
 function SpawnEnemies(wave: int){
 	var spawnNum = (defaultSpawnNumber + 5*(wave-1));
@@ -44,12 +45,16 @@ function SpawnEnemies(wave: int){
 function UpdateWave() {
 	waveNumber++;
 	SpawnEnemies(waveNumber);
-	GetComponent(enemyfollow) ;
-	
+
+	other.MoveSpeed = waveNumber * other.MoveSpeed;
+
 }
 
 function Start() {
 	SpawnEnemies(waveNumber);
+		GetComponent("enemyfollow") ;
+
+	other = gameObject.GetComponent("enemyfollow");
 }
 
 public function Update() {

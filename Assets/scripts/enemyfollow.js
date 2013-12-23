@@ -1,6 +1,6 @@
 var Player : Transform;
 
- var MoveSpeed = 4;
+ static var MoveSpeed = 4;
 
 var MaxDist = 10;
 var MinDist = 0;
@@ -25,10 +25,6 @@ function Update ()
          if(Vector3.Distance(transform.position,Player.position) <= MaxDist)
              {Debug.Log("MoveSpeed");
                 //Here Call any function U want Like Shoot at here or something
-                var other : MasterSpawnScript = GetComponent.MasterSpawnScript;
-                this.other = other;
-	other.UpdateWave();
-	other.waveNumber = 2*MoveSpeed;
 
    } 
 
