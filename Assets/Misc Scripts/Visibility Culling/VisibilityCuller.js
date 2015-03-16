@@ -24,6 +24,6 @@ function OnPreCull () {
 	if (!anyArea)
 		layerMask = outsideAreaLayers.value;	
 
-	camera.cullingMask = layerMask;
+	GetComponent.<Camera>().cullingMask = layerMask;
 }
 

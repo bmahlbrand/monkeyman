@@ -3,15 +3,15 @@ function OnTriggerEnter (col : Collider) {
 	
 	if (player) {
 		player.ApplyDamage(10000);
-	} else if (col.rigidbody) {	
-		Destroy(col.rigidbody.gameObject);
+	} else if (col.GetComponent.<Rigidbody>()) {	
+		Destroy(col.GetComponent.<Rigidbody>().gameObject);
 	} else {
 		Destroy(col.gameObject);
 	}
 }
 
 function Reset () {
-	if (collider == null)	
+	if (GetComponent.<Collider>() == null)	
 		gameObject.AddComponent(BoxCollider);
-	collider.isTrigger = true;
+	GetComponent.<Collider>().isTrigger = true;
 }

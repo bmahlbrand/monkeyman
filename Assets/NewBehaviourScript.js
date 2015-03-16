@@ -24,16 +24,16 @@ status, e.g. what am i doing right now?               */
  
 function Start (){
 var cc : CharacterController;
-cc = gameObject.AddComponent("CharacterController");
+cc = gameObject.AddComponent.<CharacterController>();
 /*  Adds a Character Controller component to gameobject */
  
 charController = GetComponent(CharacterController);
 /*    Assigns it in the charController variable to use it */
  
 // Set all animations to loop
-animation.wrapMode = WrapMode.Loop;
+GetComponent.<Animation>().wrapMode = WrapMode.Loop;
 // except shooting
-animation["attack"].wrapMode = WrapMode.Once;
+GetComponent.<Animation>()["attack"].wrapMode = WrapMode.Once;
  
 // Put idle and walk into lower layers (The default layer is always 0)
 // This will do two things
@@ -41,11 +41,11 @@ animation["attack"].wrapMode = WrapMode.Once;
 //   each other's plyback when calling CrossFade.
 // - Since shoot is in a higher layer, the animation will replace idle/walk
 //   animations when faded in.
-animation["attack"].layer = 1;
+GetComponent.<Animation>()["attack"].layer = 1;
  
 // Stop animations that are already playing
 //(In case user forgot to disable play automatically)
-animation.Stop();
+GetComponent.<Animation>().Stop();
  
  
 }
@@ -63,7 +63,7 @@ if(Input.GetAxis("Vertical") > 0){
 pressing W or up arrow)                                */
 if(Input.GetButton("Run")){
 isRunning = true ;
-animation.CrossFade("run");
+GetComponent.<Animation>().CrossFade("run");
 /*    While Run button is pressed play run animation, with
 Crossfade try to blend nicely different animations )*/
 charController.Move(transform.forward*Time.deltaTime*runSpeed)    ;
@@ -79,8 +79,8 @@ Debug.Log("isRunning value is" + " " + isRunning);
 else{
 isWalking = true ;
 /* Else if i am moving forward and not running i walk   */
-animation["walk"].speed = 1;
-animation.CrossFade("walk");
+GetComponent.<Animation>()["walk"].speed = 1;
+GetComponent.<Animation>().CrossFade("walk");
 /*    While walk button is pressed play walk animation ! */
 charController.Move(transform.forward*Time.deltaTime*walkSpeed)    ;
 Debug.Log("isWalking value is" + " " + isWalking);
@@ -90,9 +90,9 @@ Debug.Log("isWalking value is" + " " + isWalking);
 else if(Input.GetAxis("Vertical") < 0){
 isWalking = true ;
 /* Do the same for the back direction, no back run!    */
-animation["walk"].speed = 0.5;
+GetComponent.<Animation>()["walk"].speed = 0.5;
 /* revert walk animation playback                        */
-animation.CrossFade("walk");
+GetComponent.<Animation>().CrossFade("walk");
 charController.Move(transform.forward*Time.deltaTime*-walkSpeed/2)    ;
 /* Move function but in the opposite to forward
 direction by using a negative (-) vector            */
@@ -108,7 +108,7 @@ isRunning = false ;
 if(Input.GetButtonDown("Jump") && !isJumping){
 jumpForce = jumpForceDefault ;
 isJumping = true ;
-animation.Play("jump_pose") ;
+GetComponent.<Animation>().Play("jump_pose") ;
 /* Capture Jump input and prevent double air jump with
 && !isJumping, makes these lines working only while
 not already in a Jump.                               */
@@ -130,7 +130,7 @@ end the Jumping action by setting isJumping false  */
 }
  
 if(!isWalking && !isRunning && !isJumping){
-animation.CrossFade("idle");
+GetComponent.<Animation>().CrossFade("idle");
 /* If i am not doing any action , play the idle anim   */
  
 }
@@ -164,6 +164,6 @@ with the strafe animation. */
 }
  
 function slash(){
-animation.CrossFade("attack");
+GetComponent.<Animation>().CrossFade("attack");
 Debug.Log("isAttacking is" + isAttacking);
 }

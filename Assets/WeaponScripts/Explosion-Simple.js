@@ -13,10 +13,10 @@ function Start () {
 		if (!hit)
 			continue;
 		
-		if (hit.rigidbody) {
-			hit.rigidbody.AddExplosionForce(explosionPower, explosionPosition, explosionRadius, 3.0);
+		if (hit.GetComponent.<Rigidbody>()) {
+			hit.GetComponent.<Rigidbody>().AddExplosionForce(explosionPower, explosionPosition, explosionRadius, 3.0);
 						
-			var closestPoint = hit.rigidbody.ClosestPointOnBounds(explosionPosition);
+			var closestPoint = hit.GetComponent.<Rigidbody>().ClosestPointOnBounds(explosionPosition);
 			var distance = Vector3.Distance(closestPoint, explosionPosition);
 
 			// The hit points we apply fall decrease with distance from the hit point
@@ -25,15 +25,15 @@ function Start () {
 
 			// Tell the rigidbody or any other script attached to the hit object 
 			// how much damage is to be applied!
-			hit.rigidbody.SendMessageUpwards("ApplyDamage", hitPoints, SendMessageOptions.DontRequireReceiver);
+			hit.GetComponent.<Rigidbody>().SendMessageUpwards("ApplyDamage", hitPoints, SendMessageOptions.DontRequireReceiver);
 		}
 	}
 
     // stop emitting ?
-    if (particleEmitter) {
-        particleEmitter.emit = true;
+    if (GetComponent.<ParticleEmitter>()) {
+        GetComponent.<ParticleEmitter>().emit = true;
 		yield WaitForSeconds(0.5);
-		particleEmitter.emit = false;
+		GetComponent.<ParticleEmitter>().emit = false;
     }
     
     // destroy the explosion

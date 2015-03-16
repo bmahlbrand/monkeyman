@@ -5,7 +5,7 @@ static var OriginalOn = true;
 
 function Start()
 {
-Screen.showCursor = false;
+Cursor.visible = false;
 Screen.lockCursor = true;
 } 
 function Update() // Start will only get the screen size once. it will not refresh it. the turn around is to use function Update() instead.

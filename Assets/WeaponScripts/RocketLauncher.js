@@ -14,7 +14,7 @@ function Fire () {
 		instantiatedProjectile.velocity = transform.TransformDirection(Vector3 (0, 0, initialSpeed));
 
 		// Ignore collisions between the missile and the character controller
-		Physics.IgnoreCollision(instantiatedProjectile.collider, transform.root.collider);
+		Physics.IgnoreCollision(instantiatedProjectile.GetComponent.<Collider>(), transform.root.GetComponent.<Collider>());
 		
 		lastShot = Time.time;
 		ammoCount--;

@@ -1,7 +1,7 @@
 function DidPause (pause : boolean)
 {
-	if (guiTexture)
-		guiTexture.enabled = !pause;
-	if (guiText)
-		guiText.enabled = !pause;
+	if (GetComponent.<GUITexture>())
+		GetComponent.<GUITexture>().enabled = !pause;
+	if (GetComponent.<GUIText>())
+		GetComponent.<GUIText>().enabled = !pause;
 }

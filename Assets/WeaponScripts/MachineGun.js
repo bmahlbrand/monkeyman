@@ -28,10 +28,10 @@ function LateUpdate() {
 			muzzleFlash.transform.localRotation = Quaternion.AngleAxis(Random.value * 360, Vector3.forward);
 			muzzleFlash.enabled = true;
 
-			if (audio) {
-				if (!audio.isPlaying)
-					audio.Play();
-				audio.loop = true;
+			if (GetComponent.<AudioSource>()) {
+				if (!GetComponent.<AudioSource>().isPlaying)
+					GetComponent.<AudioSource>().Play();
+				GetComponent.<AudioSource>().loop = true;
 			}
 		} else {
 		// We didn't, disable the muzzle flash
@@ -39,9 +39,9 @@ function LateUpdate() {
 			enabled = false;
 			
 			// Play sound
-			if (audio)
+			if (GetComponent.<AudioSource>())
 			{
-				audio.loop = false;
+				GetComponent.<AudioSource>().loop = false;
 			}
 		}
 	}

@@ -36,8 +36,8 @@ function Detonate () {
 		var dead : Rigidbody = Instantiate(deadReplacement, transform.position, transform.rotation);
 
 		// For better effect we assign the same velocity to the exploded barrel
-		dead.rigidbody.velocity = rigidbody.velocity;
-		dead.angularVelocity = rigidbody.angularVelocity;
+		dead.GetComponent.<Rigidbody>().velocity = GetComponent.<Rigidbody>().velocity;
+		dead.angularVelocity = GetComponent.<Rigidbody>().angularVelocity;
 	}
 	
 	// If there is a particle emitter stop emitting and detach so it doesnt get destroyed

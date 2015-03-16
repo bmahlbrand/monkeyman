@@ -8,16 +8,16 @@ function Update () {
 		if (Time.timeScale != 0.0)
 		{
 			var fps : int = 1.0 / Time.deltaTime;
-			guiText.text = fps.ToString();
+			GetComponent.<GUIText>().text = fps.ToString();
 		}
 		else
 		{
-			guiText.text = "0";
+			GetComponent.<GUIText>().text = "0";
 		}
 	}
 	else
 	{
-		guiText.text = "";	
+		GetComponent.<GUIText>().text = "";	
 	}
 }
 

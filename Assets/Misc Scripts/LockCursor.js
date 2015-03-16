@@ -32,11 +32,11 @@ function SetPause (pause : boolean)
 	{
 		Time.timeScale = 0;
 		transform.position = Vector3 (.5, .5, 0);
-		guiText.anchor = TextAnchor.MiddleCenter;
+		GetComponent.<GUIText>().anchor = TextAnchor.MiddleCenter;
 	}
 	else
 	{
-		guiText.anchor = TextAnchor.UpperLeft;
+		GetComponent.<GUIText>().anchor = TextAnchor.UpperLeft;
 		transform.position = Vector3(0, 1, 0);
 		Time.timeScale = 1;
 	}
@@ -47,14 +47,14 @@ function DidPause (pause : boolean)
 	if (pause)
 	{
 	    // Show the button again
-	    guiText.enabled = true;
-		guiText.text = "Click to start playing";
+	    GetComponent.<GUIText>().enabled = true;
+		GetComponent.<GUIText>().text = "Click to start playing";
 	}
 	else
 	{
 	    // Disable the button
-	    guiText.enabled = true;
-	    guiText.text = "Escape to show the cursor";
+	    GetComponent.<GUIText>().enabled = true;
+	    GetComponent.<GUIText>().text = "Escape to show the cursor";
 	}
 }
 

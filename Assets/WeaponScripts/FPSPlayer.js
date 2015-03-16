@@ -38,11 +38,11 @@ function ApplyDamage (damage : float) {
 	if (Time.time > gotHitTimer && painBig && painLittle) {
 		// Play a big pain sound
 		if (hitPoints < maximumHitPoints * 0.2 || damage > 20) {
-			audio.PlayOneShot(painBig, 1.0 / audio.volume);
+			GetComponent.<AudioSource>().PlayOneShot(painBig, 1.0 / GetComponent.<AudioSource>().volume);
 			gotHitTimer = Time.time + Random.Range(painBig.length * 2, painBig.length * 3);
 		} else {
 			// Play a small pain sound
-			audio.PlayOneShot(painLittle, 1.0 / audio.volume);
+			GetComponent.<AudioSource>().PlayOneShot(painLittle, 1.0 / GetComponent.<AudioSource>().volume);
 			gotHitTimer = Time.time + Random.Range(painLittle.length * 2, painLittle.length * 3);
 		}
 	}
@@ -78,8 +78,8 @@ function PlayStepSounds () {
 
 	while (true) {
 		if (controller.isGrounded && controller.velocity.magnitude > 0.3) {
-			audio.clip = walkSounds[Random.Range(0, walkSounds.length)];
-			audio.Play();
+			GetComponent.<AudioSource>().clip = walkSounds[Random.Range(0, walkSounds.length)];
+			GetComponent.<AudioSource>().Play();
 			yield WaitForSeconds(audioStepLength);
 		} else {
 			yield;

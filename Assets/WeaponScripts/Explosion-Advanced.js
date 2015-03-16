@@ -27,15 +27,15 @@ function Start () {
 	// (Enemies are first turned into ragdolls with ApplyDamage then we apply forces to all the spawned body parts)
 	colliders = Physics.OverlapSphere (explosionPosition, explosionRadius);
 	for (var hit in colliders) {
-		if (hit.rigidbody)
-			hit.rigidbody.AddExplosionForce(explosionPower, explosionPosition, explosionRadius, 3.0);
+		if (hit.GetComponent.<Rigidbody>())
+			hit.GetComponent.<Rigidbody>().AddExplosionForce(explosionPower, explosionPosition, explosionRadius, 3.0);
 	}
 	
 	// stop emitting particles
-	if (particleEmitter) {
-        particleEmitter.emit = true;
+	if (GetComponent.<ParticleEmitter>()) {
+        GetComponent.<ParticleEmitter>().emit = true;
 		yield WaitForSeconds(0.5);
-		particleEmitter.emit = false;
+		GetComponent.<ParticleEmitter>().emit = false;
     }
 	
     // destroy the explosion after a while

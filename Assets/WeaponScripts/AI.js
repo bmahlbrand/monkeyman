@@ -56,7 +56,7 @@ function CanSeeTarget () : boolean {
 
 function Shoot () {
 	// Start shoot animation
-	animation.CrossFade("shoot", 0.3);
+	GetComponent.<Animation>().CrossFade("shoot", 0.3);
 
 	// Wait until half the animation has played
 	yield WaitForSeconds(delayShootTime);
@@ -65,7 +65,7 @@ function Shoot () {
 	BroadcastMessage("Fire");
 	
 	// Wait for the rest of the animation to finish
-	yield WaitForSeconds(animation["shoot"].length - delayShootTime);
+	yield WaitForSeconds(GetComponent.<Animation>()["shoot"].length - delayShootTime);
 }
 
 function AttackPlayer () {

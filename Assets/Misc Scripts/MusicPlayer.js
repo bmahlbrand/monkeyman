@@ -4,13 +4,13 @@ var clips : AudioClip[] = new AudioClip[1];
 function Start ()
 {
 	DontDestroyOnLoad(this);
-	audio.loop = false;
+	GetComponent.<AudioSource>().loop = false;
 	while (true)
 	{
-		audio.clip = clips[Random.Range(0, clips.length)];
-		audio.Play();	
-		if (audio.clip)
-			yield WaitForSeconds(audio.clip.length);
+		GetComponent.<AudioSource>().clip = clips[Random.Range(0, clips.length)];
+		GetComponent.<AudioSource>().Play();	
+		if (GetComponent.<AudioSource>().clip)
+			yield WaitForSeconds(GetComponent.<AudioSource>().clip.length);
 		else
 			yield;
 	}
