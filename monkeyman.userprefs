@@ -1,10 +1,14 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\shake.js">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\climb.js">
     <Files>
+      <File FileName="Assets\climb.js" Line="8" Column="2" />
       <File FileName="Assets\scripts\FPshoot.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\monkey.cs" Line="10" Column="11" />
+      <File FileName="Assets\scripts\monkey.cs" Line="1" Column="1" />
       <File FileName="Assets\scripts\shake.js" Line="31" Column="6" />
+      <File FileName="Assets\scripts\enemyfollow.js" Line="12" Column="49" />
+      <File FileName="Assets\scripts\Ladder Scripts\Ladder.js" Line="1" Column="1" />
+      <File FileName="Assets\scripts\Ladder Scripts\UseLadder.js" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
