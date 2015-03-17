@@ -25,8 +25,7 @@ function SpawnEnemies(wave: int){
 
 	isSpawning = true;
 		
-	for(var i = 0; i < spawnNum;i++)
-	{
+	for(var i = 0; i < spawnNum;i++) {
 		yield WaitForSeconds(Random.Range(yieldTimeMin, yieldTimeMax));
 	
 		var object : GameObject = enemyPrefabs[Random.Range(0, enemyPrefabs.Length)];
@@ -37,11 +36,11 @@ function SpawnEnemies(wave: int){
 			Random.Range(spawnZOffsetMin, spawnZOffsetMax)), position.rotation);
 			
 		enemyCounter++;
-	
 	}
 	
 	isSpawning = false;
 }
+
 function UpdateWave() {
 	waveNumber++;
 	SpawnEnemies(waveNumber);
@@ -58,9 +57,8 @@ function Start() {
 }
 
 public function Update() {
-var enemyCounter : int = GameObject.FindGameObjectsWithTag("Enemy").Length;
-	if(enemyCounter == 0 && !isSpawning)
-	{
+	var enemyCounter : int = GameObject.FindGameObjectsWithTag("Enemy").Length;
+	if(enemyCounter == 0 && !isSpawning) {
 		UpdateWave();
 	}
 }

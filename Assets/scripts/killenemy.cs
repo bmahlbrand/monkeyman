@@ -6,14 +6,12 @@ public class killenemy : MonoBehaviour {
 	public GameObject enemy;
 	
 	// Use this for initialization
-	void Start ()
-	{
-	GameObject.FindGameObjectsWithTag("Enemy");
+	void Start () {
+		GameObject.FindGameObjectsWithTag("Enemy");
 	}
 	
 	// Update is called once per frame
-	void Update ()
-	{
+	void Update (){
 	
 	}	
 	void OnCollisionEnter(Collision collision) {
