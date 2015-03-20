@@ -15,6 +15,7 @@ public class FPshoot : MonoBehaviour {
 	// Use this for initialization
 	void Start() {
 		GameObject.FindGameObjectsWithTag("Enemy");
+		currentClip = maxClip;
 	}
 	
 	// Update is called once per frame

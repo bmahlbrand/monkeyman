@@ -47,7 +47,11 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\scripts\BULLET_object.cs" />
+     <Compile Include="Assets\scripts\EnemyAttack.cs" />
+     <Compile Include="Assets\scripts\EnemyHealth.cs" />
      <Compile Include="Assets\scripts\FPshoot.cs" />
+     <Compile Include="Assets\scripts\GameOver.cs" />
+     <Compile Include="Assets\scripts\PlayerHealth.cs" />
      <Compile Include="Assets\scripts\killenemy.cs" />
      <Compile Include="Assets\scripts\monkey.cs" />
      <Compile Include="Assets\scripts\score.cs" />
