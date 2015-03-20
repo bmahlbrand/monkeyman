@@ -12,10 +12,10 @@ public class score : MonoBehaviour {
     void OnGUI()
     {
         GUI.skin = guiSkin;
-        GUI.Label(new Rect(25,25, 200f, 38.0f), points.ToString());
+        GUI.Label(new Rect(25, 25, 200f, 38.0f), points.ToString());
 		//GUI.Label(new Rect(0.0f, 0.0f, 550.0f, 32.0f), MasterSpawnScript.ToString());
 		
         GUI.skin = null;
-		
+		GUI.Label(new Rect(5, 5, 200f, 38.0f), FPshoot.currentClip.ToString());
     }
 }
