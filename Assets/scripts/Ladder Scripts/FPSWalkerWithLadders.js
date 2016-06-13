@@ -6,6 +6,7 @@ var walkSpeed: float = 7; // regular speed
 var crchSpeed: float = 3; // crouching speed
 var runSpeed: float = 20; // run speed
 var proneSpeed: float = 1; // prone speed
+var isDead = false;
 
 private var ch: CharacterController;
 private var tr: Transform;
@@ -57,26 +58,31 @@ function FixedUpdate() {
 }
 
 function Update () {
-var h = height;
+	var h = height;
+    
     var speed = walkSpeed;
     Camera.main.fieldOfView=60;
     
     if (controller.isGrounded && Input.GetKey("left shift") || Input.GetKey("right shift")){
         speed = runSpeed;
     }
+    
     if (Input.GetKey("c")){ // press C to crouch
         h = 0.5 * height;
         speed = crchSpeed; // slow down when crouching
     }
+    
     if (Input.GetKey("z")){ // press left-control to go prone
     	h= 0.2*height;
     	speed=proneSpeed; // slow down when prone
     }
+    
     if (Input.GetKey("x")){
     	speed=proneSpeed;
     	Camera.main.fieldOfView=15;
-    	}
+    }
 }
+
 // *** Added for UseLadder ***
 function OnLadder () {
 	onLadder = true;

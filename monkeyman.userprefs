@@ -1,16 +1,17 @@
-﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\score.cs">
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\Ladder Scripts\UseLadder.js">
     <Files>
-      <File FileName="Assets\scripts\FPshoot.cs" Line="46" Column="15" />
-      <File FileName="Assets\scripts\PlayerHealth.cs" Line="30" Column="3" />
-      <File FileName="Assets\scripts\killenemy.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\score.cs" Line="30" Column="2" />
-      <File FileName="Assets\scripts\RunAndCrouch.js" Line="1" Column="1" />
-      <File FileName="Assets\scripts\GameOver.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\EnemyAttack.cs" Line="20" Column="3" />
-      <File FileName="Assets\scripts\enemyfollow.js" Line="20" Column="6" />
-      <File FileName="Assets\scripts\EnemyHealth.cs" Line="3" Column="42" />
+      <File FileName="Assets\scripts\Ladder Scripts\FPSWalkerWithLadders.js" Line="29" Column="10" />
+      <File FileName="Assets\scripts\EnemyAttack.cs" Line="5" Column="41" NotebookId="1" />
+      <File FileName="Assets\scripts\Ladder Scripts\UseLadder-old.js" Line="1" Column="1" NotebookId="1" />
+      <File FileName="Assets\scripts\crosshair.js" Line="1" Column="1" NotebookId="1" />
+      <File FileName="Assets\scripts\Ladder Scripts\UseLadder.js" Line="1" Column="1" NotebookId="1" />
+      <File FileName="Assets\scripts\PlayerHealth.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="Assets\scripts\MasterSpawnScript.js" Line="1" Column="1" NotebookId="1" />
+      <File FileName="Assets\ProcMeshTutorial\Plane\ProcGround.cs" Line="68" Column="27" NotebookId="1" />
+      <File FileName="Assets\scripts\FPSWalkerWithLadders.cs" Line="105" Column="2" NotebookId="1" />
+      <File FileName="Assets\scripts\Ladder Scripts\Ladder.js" Line="1" Column="1" NotebookId="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

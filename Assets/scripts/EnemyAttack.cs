@@ -14,6 +14,9 @@ public class EnemyAttack : MonoBehaviour {
 	float timer;                                // Timer for counting up to the next attack.
 	int MaxDist = 10;
 	int MinDist = 0;
+	private LineRenderer laserShotLine;
+	private Light laserShotLight; 
+	public float flashIntensity = 3f;
 
 	void Awake () {
 		// Setting up the references.
@@ -21,9 +24,13 @@ public class EnemyAttack : MonoBehaviour {
 		playerHealth = player.GetComponent <PlayerHealth> ();
 		enemyHealth = GetComponent<EnemyHealth>();
 		//anim = GetComponent <Animator> ();
+		laserShotLine = GetComponentInChildren<LineRenderer>();
+		laserShotLine.enabled = false;
+		laserShotLight = GetComponent<Light>();
+		laserShotLight.intensity = 0f;
+
 	}
-	
-	
+
 	void OnTriggerEnter (Collider other) {
 		// If the entering collider is the player...
 		if(other.gameObject == player) {
@@ -37,6 +44,8 @@ public class EnemyAttack : MonoBehaviour {
 		if(other.gameObject == player) {
 			// ... the player is no longer in range.
 			playerInRange = false;
+			laserShotLight.intensity = 0.0f;
+			laserShotLine.enabled = false;
 		}
 	}
 	
@@ -64,6 +73,18 @@ public class EnemyAttack : MonoBehaviour {
 		if(playerHealth.currentHealth > 0) {
 			playerHealth.TakeDamage (attackDamage);
 		}
+
+		// Set the initial position of the line renderer to the position of the muzzle.
+		laserShotLine.SetPosition(0, laserShotLine.transform.position);
+		
+		// Set the end position of the player's centre of mass.
+		laserShotLine.SetPosition(1, player.transform.position + Vector3.up * 1.5f);
+		
+		// Turn on the line renderer.
+		laserShotLine.enabled = true;
+
+		// Make the light flash.
+		laserShotLight.intensity = flashIntensity;
 	}
 
 	bool inRange() {

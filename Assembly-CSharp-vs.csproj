@@ -46,8 +46,25 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\ProcMeshTutorial\Common\MeshBuilder.cs" />
+     <Compile Include="Assets\ProcMeshTutorial\Common\ProcBase.cs" />
+     <Compile Include="Assets\ProcMeshTutorial\Cylinder\ProcCylinder.cs" />
+     <Compile Include="Assets\ProcMeshTutorial\Cylinder\ProcCylinderBend.cs" />
+     <Compile Include="Assets\ProcMeshTutorial\Cylinder\ProcCylinderBendTaper.cs" />
+     <Compile Include="Assets\ProcMeshTutorial\Cylinder\ProcCylinderTaper.cs" />
+     <Compile Include="Assets\ProcMeshTutorial\Cylinder\ProcFlower.cs" />
+     <Compile Include="Assets\ProcMeshTutorial\Cylinder\ProcMushroom.cs" />
+     <Compile Include="Assets\ProcMeshTutorial\Cylinder\ProcSphere.cs" />
+     <Compile Include="Assets\ProcMeshTutorial\Plane\ProcCube.cs" />
+     <Compile Include="Assets\ProcMeshTutorial\Plane\ProcFence.cs" />
+     <Compile Include="Assets\ProcMeshTutorial\Plane\ProcGround.cs" />
+     <Compile Include="Assets\ProcMeshTutorial\Plane\ProcHouse.cs" />
+     <Compile Include="Assets\ProcMeshTutorial\Plane\ProcQuad.cs" />
+     <Compile Include="Assets\ProcMeshTutorial\Plane\ProcQuadSimple.cs" />
+     <Compile Include="Assets\pew.cs" />
      <Compile Include="Assets\scripts\BULLET_object.cs" />
      <Compile Include="Assets\scripts\EnemyAttack.cs" />
+     <Compile Include="Assets\scripts\EnemyFollow.cs" />
      <Compile Include="Assets\scripts\EnemyHealth.cs" />
      <Compile Include="Assets\scripts\FPshoot.cs" />
      <Compile Include="Assets\scripts\GameOver.cs" />
@@ -56,6 +73,7 @@
      <Compile Include="Assets\scripts\monkey.cs" />
      <Compile Include="Assets\scripts\score.cs" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Particle Shaders\Mobile Multiply Culled.shader" />
+     <None Include="Assets\shader.shader" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Miscellaneous Shaders\Mobile Background.shader" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Vertex Colored Shaders\Mobile Transparent Vertex Color.shader" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Miscellaneous Shaders\Mobile Detail.shader" />

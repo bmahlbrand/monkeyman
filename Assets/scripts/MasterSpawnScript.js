@@ -18,7 +18,7 @@ var defaultSpawnNumber = 5;
 var waveNumber = 1; 
 
 var isSpawning = false;
-var other : enemyfollow;
+//var other : enemyfollow;
 
 function SpawnEnemies(wave: int){
 	var spawnNum = (defaultSpawnNumber + 5*(wave-1));
@@ -45,7 +45,7 @@ function UpdateWave() {
 	waveNumber++;
 	SpawnEnemies(waveNumber);
 
-	other.MoveSpeed = waveNumber * other.MoveSpeed;
+	//other.MoveSpeed = waveNumber * other.MoveSpeed;
 
 }
 
@@ -53,7 +53,7 @@ function Start() {
 	SpawnEnemies(waveNumber);
 		GetComponent("enemyfollow") ;
 
-	other = gameObject.GetComponent("enemyfollow");
+//	other = gameObject.GetComponent("enemyfollow");
 }
 
 public function Update() {
@@ -62,6 +62,7 @@ public function Update() {
 		UpdateWave();
 	}
 }
+
 function OnGUI () {
 
     GUI.Label (Rect (25, 50, 200, 30), "Wave: "+ waveNumber.ToString());

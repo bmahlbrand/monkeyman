@@ -95,10 +95,10 @@
      <Compile Include="Assets\scripts\PauseMenu.js" />
      <Compile Include="Assets\scripts\RunAndCrouch.js" />
      <Compile Include="Assets\scripts\crosshair.js" />
-     <Compile Include="Assets\scripts\enemyfollow.js" />
      <Compile Include="Assets\scripts\shake.js" />
      <Compile Include="Assets\scripts\targetmovement.js" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Particle Shaders\Mobile Multiply Culled.shader" />
+     <None Include="Assets\shader.shader" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Miscellaneous Shaders\Mobile Background.shader" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Vertex Colored Shaders\Mobile Transparent Vertex Color.shader" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Miscellaneous Shaders\Mobile Detail.shader" />
